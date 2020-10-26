@@ -34,7 +34,6 @@ export default class Blank extends React.Component {
   render = () => (
     <View>
       <DateTimePicker
-        showIcon={false}
         date={this.state.DateTimePicker_2}
         onDateChange={selectedDate =>
           this.setState({ DateTimePicker_2: selectedDate })
@@ -44,14 +43,12 @@ export default class Blank extends React.Component {
       <Button title="Press me!" onPress={() => alert("Pressed!")} />
       <TextInput
         placeholder="Number Input Placeholder"
-        keyboardType="numeric"
         style={styles.TextInput_5}
         value={this.state.TextInput_5}
         onChangeText={nextValue => this.setState({ TextInput_5: nextValue })}
       />
       <TextInput
         placeholder="Sample text input placeholder"
-        multiline={true}
         style={styles.TextInput_6}
         value={this.state.TextInput_6}
         onChangeText={nextValue => this.setState({ TextInput_6: nextValue })}
@@ -59,6 +56,8 @@ export default class Blank extends React.Component {
       <Icon name="object-group" style={styles.Icon_7} />
       <CheckBox
         title="Radio button"
+        checkedIcon="dot-circle-o"
+        uncheckedIcon="circle-o"
         checked={this.state.CheckBox_8}
         onPress={nextChecked => this.setState({ CheckBox_8: nextChecked })}
       />
@@ -68,6 +67,7 @@ export default class Blank extends React.Component {
         onPress={nextChecked => this.setState({ CheckBox_9: nextChecked })}
       />
       <Text style={styles.Text_10}>Sample text content</Text>
+      <Text style={styles.Text_11}>Sample text content</Text>
     </View>
   )
 }
@@ -115,6 +115,39 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     textAlign: "center"
   },
+
+  Button_4: {},
+  TextInput_5: { textAlign: "center" },
+  TextInput_6: { height: 100, textAlign: "right" },
+  Icon_7: {
+    width: 100,
+    height: 100,
+    alignSelf: "center",
+    borderWidth: 3,
+    borderRadius: 20,
+    color: "#1831af",
+    backgroundColor: "#dce87d",
+    textDecorationLine: "overline",
+    textTransform: "uppercase",
+    lineHeight: 26
+  },
+
+  CheckBox_8: {},
+  CheckBox_9: {},
+  Text_10: {
+    width: "100%",
+    height: "100%",
+    alignSelf: "center",
+    textAlign: "center"
+  },
+  View_1: {},
+  DateTimePicker_2: {},
+  Text_3: {
+    width: "100%",
+    height: "100%",
+    alignSelf: "center",
+    textAlign: "center"
+  },
   Button_4: {},
   TextInput_5: { textAlign: "center" },
   TextInput_6: { height: 100, textAlign: "right" },
@@ -133,6 +166,12 @@ const styles = StyleSheet.create({
   CheckBox_8: {},
   CheckBox_9: {},
   Text_10: {
+    width: "100%",
+    height: "100%",
+    alignSelf: "center",
+    textAlign: "center"
+  },
+  Text_11: {
     width: "100%",
     height: "100%",
     alignSelf: "center",
