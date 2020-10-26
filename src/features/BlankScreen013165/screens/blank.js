@@ -23,7 +23,13 @@ export default class Blank extends React.Component {
     }
   }
 
-  state = { DateTimePicker_2: new Date(""), TextInput_5: "", TextInput_6: "" }
+  state = {
+    DateTimePicker_2: new Date(""),
+    TextInput_5: "",
+    TextInput_6: "",
+    CheckBox_8: true,
+    CheckBox_9: true
+  }
 
   render = () => (
     <View>
@@ -37,15 +43,27 @@ export default class Blank extends React.Component {
       <Button title="Press me!" onPress={() => alert("Pressed!")} />
       <TextInput
         placeholder="Number Input Placeholder"
-        keyboardType="numeric"
         value={this.state.TextInput_5}
         onChangeText={nextValue => this.setState({ TextInput_5: nextValue })}
       />
       <TextInput
         placeholder="Sample text input placeholder"
-        multiline={true}
+        style={styles.TextInput_6}
         value={this.state.TextInput_6}
         onChangeText={nextValue => this.setState({ TextInput_6: nextValue })}
+      />
+      <Icon name="object-group" style={styles.Icon_7} />
+      <CheckBox
+        title="Radio button"
+        checkedIcon="dot-circle-o"
+        uncheckedIcon="circle-o"
+        checked={this.state.CheckBox_8}
+        onPress={nextChecked => this.setState({ CheckBox_8: nextChecked })}
+      />
+      <CheckBox
+        title="Checkbox"
+        checked={this.state.CheckBox_9}
+        onPress={nextChecked => this.setState({ CheckBox_9: nextChecked })}
       />
     </View>
   )
@@ -64,5 +82,25 @@ const styles = StyleSheet.create({
   Text_3: {},
   Button_4: {},
   TextInput_5: {},
-  TextInput_6: {}
+  TextInput_6: {},
+  View_1: {},
+  DateTimePicker_2: {},
+  Text_3: {},
+  Button_4: {},
+  TextInput_5: {},
+  TextInput_6: { height: 100 },
+  Icon_7: {
+    width: 100,
+    height: 100,
+    alignSelf: "center",
+    borderWidth: 3,
+    borderRadius: 20,
+    color: "#1831af",
+    backgroundColor: "#dce87d",
+    textDecorationLine: "overline",
+    textTransform: "uppercase",
+    lineHeight: 26
+  },
+  CheckBox_8: {},
+  CheckBox_9: {}
 })
