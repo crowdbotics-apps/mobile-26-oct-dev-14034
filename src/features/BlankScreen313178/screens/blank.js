@@ -23,16 +23,30 @@ export default class Blank extends React.Component {
     }
   }
 
-  state = { TextInput_3: "" }
+  state = { TextInput_3: "", TextInput_6: "", CheckBox_7: true }
 
   render = () => (
     <View>
       <Button title="Press me!" onPress={() => alert("Pressed!")} />
       <TextInput
         placeholder="Sample text input placeholder"
-        multiline={true}
         value={this.state.TextInput_3}
         onChangeText={nextValue => this.setState({ TextInput_3: nextValue })}
+      />
+      <Slider value={50} minimumValue={0} maximumValue={100} />
+      <Button title="Press me!" onPress={() => alert("Pressed!")} />
+      <TextInput
+        placeholder="Sample text input placeholder"
+        multiline={true}
+        value={this.state.TextInput_6}
+        onChangeText={nextValue => this.setState({ TextInput_6: nextValue })}
+      />
+      <CheckBox
+        title="Radio button"
+        checkedIcon="dot-circle-o"
+        uncheckedIcon="circle-o"
+        checked={this.state.CheckBox_7}
+        onPress={nextChecked => this.setState({ CheckBox_7: nextChecked })}
       />
       <Slider value={50} minimumValue={0} maximumValue={100} />
     </View>
@@ -44,8 +58,17 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 16
   },
+
   View_1: {},
   Button_2: {},
   TextInput_3: {},
-  Slider_4: {}
+  Slider_4: {},
+  View_1: {},
+  Button_2: {},
+  TextInput_3: {},
+  Slider_4: {},
+  Button_5: {},
+  TextInput_6: {},
+  CheckBox_7: {},
+  Slider_8: {}
 })
